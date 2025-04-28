@@ -19,7 +19,7 @@ SELECT ROUND(
             WHERE rn = (total_rows+1)/2
         )
         WHEN total_rows % 2 = 0 THEN (
-            SELECT LAT_N
+            SELECT AVG(LAT_N)
             FROM Ordered
             WHERE rn IN (total_rows/2, (total_rows+1)/2)
         )
